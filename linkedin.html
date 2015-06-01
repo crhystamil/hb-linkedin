@@ -1,0 +1,14 @@
+<html>
+  <head>
+      <script src="/socket.io/socket.io.js"></script>
+</head>
+      <body>
+          <script>
+              var socket = io.connect();
+              socket.on('message',function(data){
+                document.write(data.message);
+              });
+          </script>
+          <div></div>
+</body>
+</html>

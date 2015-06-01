@@ -1,0 +1,51 @@
+* {
+    font-family: 'Verdana',Arial,serif;
+}
+html, body, div, ul, p {
+    margin: 0px;
+    padding: 0px;
+}
+table { 
+      border-collapse: collapse; 
+}
+
+#search {
+    margin: 4px 20px 0px 0px;
+}
+#formWrapper{
+    width:550px;
+    padding: 2em 0 2em 0;
+    margin-top: 100px;
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-left: auto;
+}
+
+h1 {
+    align: center;
+}
+input[type="text"] {
+    width: 300px;
+    margin: 0;
+    padding: 4px 15px;
+    border-radius: 15px;
+    font-size: 14pt;
+    text-align: middle;
+    margin-left: 20px;
+}
+input[type="submit"]{
+    border-radius: 15px
+    font-size: 15pt;
+}
+select {
+    width: 300;
+    padding:3px;
+    margin: 0;
+    padding: 6px 15px;
+    border-radius: 15px;
+    font-size: 11pt;
+    margin-left:30px;
+    margin-right:auto;
+
+}
+
