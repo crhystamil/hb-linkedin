@@ -81,7 +81,7 @@ var server = http.createServer(function(request, response){
     }
 });
 
-server.listen(8001);
+server.listen(80);
 
 var ion = io.listen(server);
 ion.on('connection', function(socket){
