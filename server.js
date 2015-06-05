@@ -95,7 +95,7 @@ google('site:'+datos_post['pais']+'.linkedin.com '+datos_post['cadena'], functio
 
     for (var i = 0; i < links.length; ++i) {
         ex.getFromUrl(links[i].link,function(err,res){
-        if(res['formattedName'] !== '' || res !== null){
+        if(res['formattedName'] != '' ){
         ion.emit('message',{'message': jade.renderFile('tpl.jade',{
             'formattedName':res.formattedName
           , 'headline':res.headline
@@ -109,7 +109,7 @@ google('site:'+datos_post['pais']+'.linkedin.com '+datos_post['cadena'], functio
         }
         });
 
-        if(nextCounter<4){
+        if(nextCounter<2){
             nextCounter += 1
             if (next) next()
         }                    
