@@ -3,7 +3,8 @@ table
             td(rowspan='5')
                img(src='#{pictureUrl}' height='150' width='150' )
             td Nombre
-            td #{formattedName}
+            td 
+                a(href='#{publicProfileUrl}') #{formattedName} 
         tr
             td Cargo
             td #{headline}
@@ -13,7 +14,4 @@ table
         tr
             td Area
             td #{industry}
-        tr
-            td Perfil Publico
-            td #{publicProfileUrl}
 
