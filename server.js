@@ -93,38 +93,33 @@ ion.on('connection', function(socket){
 google('site:'+datos_post['pais']+'.linkedin.com '+datos_post['cadena'], function (err, next, links){
     if (err) console.error(err)
 
-    for (var i = 0; i < links.length; ++i) {
-        ex.getFromUrl(links[i].link,function(err,res){
-        if(err){
-            console.log(err);
-        }else{
-        console.log(JSON.stringify(res));
-        if(res){
-            if (res['formattedName'] != ''){
-        ion.emit('message',{'message': jade.renderFile('tpl.jade',{
-            'formattedName':res.formattedName
-          , 'headline':res.headline
-          , 'location':res.location
-          , 'industry':res.industry
-          , 'numConnections':res.numConnections
-          , 'summary':res.summary
-          , 'pictureUrl':res.pictureUrl
-          , 'publicProfileUrl':res.publicProfileUrl
-            })});
-            }
-        }
-        }
-        });
-
-        if(nextCounter<2){
-            nextCounter += 1
-            if (next) next()
-        }                    
-    }
-})
+    links.forEach(function(link){
+        setTimeout(function(){
+            ex.getFromUrl(link.link,function(err,res){
+                if(err){
+                    console.log(err);
+                }else{
+                    if(res){
+                        if (res['formattedName'] != ''){
+                            ion.emit('message',{'message': jade.renderFile('tpl.jade',{
+                                'formattedName':res.formattedName
+                              , 'headline':res.headline
+                              , 'location':res.location
+                              , 'industry':res.industry
+                              , 'numConnections':res.numConnections
+                              , 'summary':res.summary
+                              , 'pictureUrl':res.pictureUrl
+                              , 'publicProfileUrl':res.publicProfileUrl
+                            })});
+                        }
+                    }
+                }
+            });
+            if(nextCounter<2){
+                nextCounter += 1
+                if (next) next()
+            }                    
+        },6000);
+    });
 });
-
-
-
-
-
+});
