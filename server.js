@@ -95,6 +95,9 @@ google('site:'+datos_post['pais']+'.linkedin.com '+datos_post['cadena'], functio
 
     for (var i = 0; i < links.length; ++i) {
         ex.getFromUrl(links[i].link,function(err,res){
+        if(err){
+            console.log(err);
+        }else{
         console.log(JSON.stringify(res));
         if(res){
             if (res['formattedName'] != ''){
@@ -109,6 +112,7 @@ google('site:'+datos_post['pais']+'.linkedin.com '+datos_post['cadena'], functio
           , 'publicProfileUrl':res.publicProfileUrl
             })});
             }
+        }
         }
         });
 
