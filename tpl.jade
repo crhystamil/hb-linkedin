@@ -1,29 +1,19 @@
-div 
-table(border='1')
-    thead
-        tr  #{formattedName}
-    tbody
+table
+       tr
+            td(rowspan='5')
+               img(src='#{pictureUrl}' height='150' width='150' )
+            td Nombre
+            td #{formattedName}
         tr
-            td Headline
+            td Cargo
             td #{headline}
         tr
-            td Location
+            td Lugar
             td #{location}
         tr
-            td Industry
+            td Area
             td #{industry}
         tr
-            td NumConnections
-            td #{numConnections}
-        tr
-            td Summary
-            td #{summary}
-        tr
-            td Picture
-            td
-                img(src='#{pictureUrl}' height='150' width='150')
-        tr
-            td Public Profile URL
-            td 
-                a(href='#{publicProfileUrl}') #{formattedName}
+            td Perfil Publico
+            td #{publicProfileUrl}
 
