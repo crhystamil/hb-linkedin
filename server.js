@@ -97,6 +97,7 @@ google('site:'+datos_post['pais']+'.linkedin.com '+datos_post['cadena'], functio
         ex.getFromUrl(links[i].link,function(err,res){
         console.log(JSON.stringify(res));
         if(res){
+            if (res['formattedName'] != ''){
         ion.emit('message',{'message': jade.renderFile('tpl.jade',{
             'formattedName':res.formattedName
           , 'headline':res.headline
@@ -107,6 +108,7 @@ google('site:'+datos_post['pais']+'.linkedin.com '+datos_post['cadena'], functio
           , 'pictureUrl':res.pictureUrl
           , 'publicProfileUrl':res.publicProfileUrl
             })});
+            }
         }
         });
 
