@@ -12,7 +12,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node server.js"
+    "start": "node server"
   },
   "author": "Hiperborea",
   "license": "GPLv3",
