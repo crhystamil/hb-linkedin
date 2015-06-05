@@ -95,7 +95,8 @@ google('site:'+datos_post['pais']+'.linkedin.com '+datos_post['cadena'], functio
 
     for (var i = 0; i < links.length; ++i) {
         ex.getFromUrl(links[i].link,function(err,res){
-        if(res['formattedName'] != '' ){
+        console.log(JSON.stringify(res));
+        if(res){
         ion.emit('message',{'message': jade.renderFile('tpl.jade',{
             'formattedName':res.formattedName
           , 'headline':res.headline
